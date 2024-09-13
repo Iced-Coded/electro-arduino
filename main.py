@@ -4,8 +4,7 @@ import network
 import time
 from sim800 import SIM800
 
-sta_if = network.WLAN(network.STA_IF)
-ap_if = network.WLAN(network.AP_IF)
+wlan = network.WLAN(network.STA_IF)
 
 # Конфігурація GSM модуля
 # Пін на ESP32, куди підключений сам GSM модуль
@@ -21,15 +20,22 @@ wifi_password = "qwerty123"
 # 2 = використовувати як Wi-Fi, так і стільникову мережу
 mode = 0
 
+# Конфігурація телеграмм
+# Отримати токен можна тут: https://t.me/BotFather
+bot_token = ""
+# Айді чату (Або особистих повідомлень, або груповий чат)
+# Можна отримати з-за допомоги цього бота: https://t.me/GetChatID_IL_BOT
+chat_id = 0
+
 is_connected_wifi = False
 is_connected_cellular = False
 
 if mode == 0 or 2:
-    sta_if.active(True)
-    sta_if.connect({wifi_ssid}, {wifi_password})
-    if sta_if.isconnected() == True:
+    wlan.active(True)
+    wlan.connect({wifi_ssid}, {wifi_password})
+    if wlan.isconnected() == True:
         print("Успішно під'єднався до Wi-Fi!")
-        ap_if.active(False)
+        wlan.active(False)
         is_connected_wifi = True
     else:
         print("Wi-Fi не знайдено або модуль не працює...")
