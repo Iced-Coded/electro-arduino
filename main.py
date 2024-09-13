@@ -49,4 +49,3 @@ def configurate_gsm(apn):
     send_at_command('AT+SAPBR=1,1')
     response = send_at_command('AT+SAPBR=2,1')
     print(response)
-
