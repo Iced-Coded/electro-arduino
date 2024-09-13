@@ -1,9 +1,8 @@
 # Оповіщення про стан електропостачання через ESP32 та суміжні модулі
 ## Гілки
-На час 13.09.24, ми маємо **3** гілки.
+На час 13.09.24, ми маємо **2** гілки.
 - [main](https://github.com/Iced-Coded/electro-arduino), це основна, релізна гілка, в яку дуже рідко вносяться зміни.
 - [pre-release](https://github.com/Iced-Coded/electro-arduino/tree/pre-release), це дебаг гілка, де тестуються усі інші (feature) гілки.
-- [gsm-commands](https://github.com/Iced-Coded/electro-arduino/tree/gsm-commands), це гілка, відкрита від [Проблеми #5](https://github.com/Iced-Coded/electro-arduino/issues/5), де виконується розробка коду для GSM модуля.
 ## Матеріали
 На даний момент, планується використання таких матеріалів:
 - [ESP32-C3 Type-C](https://arduino.ua/prod6618-mikroplata-esp32-c3-type-c-12-gpio), головна міскросхема яка буде "мізками" усієї збірки; Включає у собі Wi-Fi, Bluetooth 5 та 802.11b/g/n. 
