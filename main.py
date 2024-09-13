@@ -39,14 +39,9 @@ def check_network():
     if response == 1 or 3:
         print(response)
     else:
-        raise Exception("Мобільна мережа не знайдена.")
-
-# Це все виконується аби отримати IP-адресу нашому GSM модулю.
-def configurate_gsm(apn):
-    print("Налаштовую зв'язок...")
-    send_at_command('AT+SAPBR=3,1,"CONTYPE","GPRS"')
-    send_at_command(f'AT+SAPBR=3,1,"APN","{apn}"')
-    send_at_command('AT+SAPBR=1,1')
-    response = send_at_command('AT+SAPBR=2,1')
-    print(response)
+        print("Wi-Fi не знайдено або модуль не працює...")
+elif mode == 1 or 2:
+    # Ініціалізовуємо GSM-модуль
+    sim800 = SIM800(uart_pin={gsm_uart_pin}, baud={gsm_baud})
+    is_connected_cellular = True
 
