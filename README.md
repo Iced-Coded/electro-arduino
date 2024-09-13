@@ -13,3 +13,4 @@
 ## Список використаних модулів
 - machine (MicroPython): https://micropython.org/
 - utelegram: https://github.com/jordiprats/micropython-utelegram
+- sim800: https://github.com/basanovase/sim800
