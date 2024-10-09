@@ -1,4 +1,4 @@
-import requests
+import urequests
 from sim800 import SIM800TCPIP
 
 # Класс на те, аби надсилати повідомлення.
@@ -9,7 +9,7 @@ class SendMessage:
         # Посилання на API телеграмму, яке ми й будемо використовувати у GET запиті
         self.tg_url = f"https://api.telegram.org/bot{self.token}/sendMessage?chat_id={chat_id}&text={message}"
         if mode == 0:
-            response = requests.get(self.tg_url)
+            response = urequests.get(self.tg_url)
             if response == 200 or 204 or "200" or "204":
                 pass
             else:
