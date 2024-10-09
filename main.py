@@ -1,4 +1,5 @@
 import gsm
+import power
 import telegram_sim800l
 import _thread
 
@@ -11,7 +12,7 @@ address = "вул. Степана Бандери, 107"
 chat_id = 0
 # Конфігурація GSM модуля
 # Пін на ESP32, куди підключений сам GSM модуль
-gsm_uart_pin = 1
+gsm_uart_pin = 21
 # Швидкість каналу данних
 gsm_baud = 115200
 # Назва мережі Wi-Fi
