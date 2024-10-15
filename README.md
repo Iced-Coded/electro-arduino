@@ -14,3 +14,6 @@
 - machine (MicroPython): https://micropython.org/
 - utelegram: https://github.com/jordiprats/micropython-utelegram
 - sim800: https://github.com/basanovase/sim800
+## Схематика проєкту
+![circutry schematic]([http://url/to/img.png](https://github.com/Iced-Coded/electro-arduino/blob/new-file-system/img/Circuit.png))
+
