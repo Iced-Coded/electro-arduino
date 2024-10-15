@@ -12,7 +12,6 @@
 - Та інші деталі, список яких буде доповнюватися.
 ## Список використаних модулів
 - machine (MicroPython): https://micropython.org/
-- utelegram: https://github.com/jordiprats/micropython-utelegram
 - sim800: https://github.com/basanovase/sim800
 ## Схематика проєкту
 ![circutry schematic](https://github.com/Iced-Coded/electro-arduino/blob/new-file-system/img/Circuit.png)
