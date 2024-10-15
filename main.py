@@ -1,7 +1,9 @@
 import gsm
 import power
-import telegram_sim800l
+import telegram_sim800l as telegram
 import _thread
+from utime import sleep
+import time
 
 # -- Налаштування --
 
@@ -26,6 +28,8 @@ mode = 0
 # Дозвіл на підключення до роумінгової мережі.
 # Це включає у себе "Національний Роумінг" так і звичайний, міжнаціональний роумінг
 roaming = True
+# Аналоговий порт куди під'єднаний модуль зарядки (TP4046), за стандартом, це GPIO0
+charging_module_analogue_port = 0
 
 Messages = [
     "🕯️ Світло відсутнє"
@@ -36,6 +40,8 @@ Messages = [
 is_ready = False
 is_cellular = False
 is_wifi = False
+is_power_outage = False
+when_power_outage = ""
 
 connected = gsm.ConnectToInternet(mode, wifi_ssid, wifi_password, gsm_uart_pin, gsm_baud, roaming)
 if connected:
@@ -49,7 +55,12 @@ else:
 
 if is_ready == True:
     # ТИМЧАСОВО: Заготовка під підключення модуля живлення
-    def light_check():
-        pass
+    def check_power():
+        power_status = power.CheckPower(charging_module_analogue_port)
+        if power_status < 1:
+            global when_power_outage
+            when_power_outage = time.localtime()
+
+            pass
 else:
     raise OSError("Щось пішло не так. Зробіть Issue на GitHub сторінці.")

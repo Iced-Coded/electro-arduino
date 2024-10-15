@@ -1,6 +1,7 @@
 import urequests
 from sim800 import SIM800TCPIP
 
+
 # Класс на те, аби надсилати повідомлення.
 class SendMessage:
     def __init__(self, message, chat_id, mode):
