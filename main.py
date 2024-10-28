@@ -15,7 +15,7 @@ chat_id = 0
 # Конфігурація GSM модуля
 # Пін на ESP32, куди підключений сам GSM модуль
 gsm_uart_pin = 21
-# Швидкість каналу данних
+# Швидкість каналу даних
 gsm_baud = 115200
 # Назва мережі Wi-Fi
 wifi_ssid = "Alexandro"
@@ -32,7 +32,9 @@ roaming = True
 charging_module_analogue_port = 0
 
 Messages = [
-    "🕯️ Світло відсутнє"
+    f"🕯️ Електропостачання відсутнє по адресі '{address}'."
+    f"💡 Електропостачання відновилося по адресі '{address}'."
+
 ]
 
 # Тут код
@@ -41,7 +43,6 @@ is_ready = False
 is_cellular = False
 is_wifi = False
 is_power_outage = False
-when_power_outage = ""
 
 connected = gsm.ConnectToInternet(mode, wifi_ssid, wifi_password, gsm_uart_pin, gsm_baud, roaming)
 if connected:
