@@ -66,5 +66,8 @@ if is_ready == True:
         elif power_status > 1 and current_power != True:
             current_power = True
             telegram.SendMessge(Messages[1], chat_id, mode, token)
+    while True:
+        async check_power()
+        sleep(10)
 else:
     raise OSError("Щось пішло не так. Зробіть Issue на GitHub сторінці.")
