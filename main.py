@@ -3,7 +3,6 @@ import power
 import telegram_sim800l as telegram
 import _thread
 from utime import sleep
-import time
 
 # -- Налаштування --
 
@@ -30,6 +29,8 @@ mode = 0
 roaming = True
 # Аналоговий порт куди під'єднаний модуль зарядки (TP4046), за стандартом, це GPIO0
 charging_module_analogue_port = 0
+# Токен Вашого боту.
+token = ""
 
 Messages = [
     f"🕯️ Електропостачання відсутнє по адресі '{address}'."
@@ -58,10 +59,12 @@ if is_ready == True:
     # ТИМЧАСОВО: Заготовка під підключення модуля живлення
     def check_power():
         power_status = power.CheckPower(charging_module_analogue_port)
-        if power_status < 1:
-            global when_power_outage
-            when_power_outage = time.localtime()
-
-            pass
+        current_power = True # 1 = є, 2 = нема
+        if power_status < 1 and current_power == True:
+            current_power = False
+            telegram.SendMessage(Messages[0], chat_id, mode, token)
+        elif power_status > 1 and current_power != True:
+            current_power = True
+            telegram.SendMessge(Messages[1], chat_id, mode, token)
 else:
     raise OSError("Щось пішло не так. Зробіть Issue на GitHub сторінці.")
