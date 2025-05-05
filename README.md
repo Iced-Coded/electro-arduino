@@ -1,4 +1,5 @@
-# Оповіщення про стан електропостачання через ESP32 та суміжні модулі
+# Автоматизована, автономна система оповіщення про стан електропостачання
+На основі плати ESP32-C3 Super Mini.
 ## Гілки
 На час 13.09.24, ми маємо **2** гілки.
 - [main](https://github.com/Iced-Coded/electro-arduino), це основна, релізна гілка, в яку дуже рідко вносяться зміни.
@@ -12,4 +13,7 @@
 - Та інші деталі, список яких буде доповнюватися.
 ## Список використаних модулів
 - machine (MicroPython): https://micropython.org/
-- utelegram: https://github.com/jordiprats/micropython-utelegram
+- sim800: https://github.com/basanovase/sim800
+## Схематика проєкту
+![circutry schematic](https://private-user-images.githubusercontent.com/48327170/377186857-d2ade522-1889-4977-83b6-78112a6faf0f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MjkxMDQxNTEsIm5iZiI6MTcyOTEwMzg1MSwicGF0aCI6Ii80ODMyNzE3MC8zNzcxODY4NTctZDJhZGU1MjItMTg4OS00OTc3LTgzYjYtNzgxMTJhNmZhZjBmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMTYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDE2VDE4MzczMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPThlZjYxMDIyNjExMzcyYjcxZWJiM2Q5ZGVlNzgyMTAxMTFlZTVlYWZjOWU2ZWNkZWE0MjY3NDJhM2NmYjFmYzUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XxuZbUyrVCDxwCBA9B_WB2H9C0jgQgkt79605oonNmM)
+
